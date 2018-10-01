@@ -1,0 +1,34 @@
+{
+  "name": "express_webserver",
+  "version": "1.0.0",
+  "description": "webserver",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "eslint": "^5.6.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "nodemon": "^1.18.4"
+  },
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dferrer8/express.git"
+  },
+  "keywords": [
+    "express"
+  ],
+  "author": "daviddfg <david.dfg@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dferrer8/express/issues"
+  },
+  "homepage": "https://github.com/dferrer8/express#readme"
+}
