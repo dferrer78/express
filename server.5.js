@@ -4,8 +4,7 @@ const path = require('path')
 
 const { consoleLogMiddleware, fileLogMiddleware } = require('./middleware')
 
-const hbs = require('hbs')
-hbs.registerPartials(path.join(__dirname, 'views', 'partials'))
+// const hbs = require('hbs')
 app.set('view engine', 'hbs') // clave valor
 
 app.use(consoleLogMiddleware)

@@ -4,8 +4,7 @@ const path = require('path')
 
 const { consoleLogMiddleware, fileLogMiddleware } = require('./middleware')
 
-const hbs = require('hbs')
-hbs.registerPartials(path.join(__dirname, 'views', 'partials'))
+// const hbs = require('hbs')
 app.set('view engine', 'hbs') // clave valor
 
 app.use(consoleLogMiddleware)
@@ -22,10 +21,8 @@ app.use(express.static(staticRoute))
 }) */
 
 app.get('/contactar', (req, res) => {
-  res.render('contactar.hbs', {
-    pageTitle: 'Contactar',
-    currentYear: new Date().getFullYear()
-  })
+  // res.send({ Nombre: 'Pepe', correo: 'pepe@pepe.com' })
+  res.render('contactar')
 })
 
 app.listen(3000, () => {
