@@ -28,6 +28,13 @@ app.get('/contactar', (req, res) => {
   })
 })
 
+app.get('/inicial', (req, res) => {
+  res.render('inicial.hbs', {
+    pageTitle: 'Inicial',
+    currentYear: new Date().getFullYear()
+  })
+})
+
 app.listen(3000, () => {
   console.log('Servidor levantado puerto 3000')
 }) // puerto, función callback
