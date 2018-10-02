@@ -1,32 +1,25 @@
 const express = require('express')
 const app = express()
+const path = require('path')
 
-// fichero de log
-app.use((req, res, next) => {
-  const now = new Date().toString()
-  console.log(`Time: ${now} ${req.method} ${req.url}`)
-  // req.user = 'pepe'
-  next()
-})
+const { consoleLogMiddleware, fileLogMiddleware } = require('./middleware')
 
-app.use((req, res, next) => {
-  console.log(req)
-  console.log(req.user)
-})
+app.use(consoleLogMiddleware)
 
+app.use(fileLogMiddleware)
+
+const staticRoute = path.join(__dirname, 'public')
+app.use(express.static(staticRoute))
 // middleware
-/* app.use('/contactar', (req, res, next) => {
-    next()
- })
- */
-app.get('/', (req, res) => {
-  res.send('Hola Mundo')
+
+app.get('/', (req, res, next) => {
+  res.send('Hola')
 })
-/* app.get('/contactar', (req, res) => {
-    res.send('<h1>Página para contactar</1>')
-}) */
-// json
-/* app.get('/contactar', (req, res) => {
+
+app.get('/contactar', (req, res) => {
   res.send({ Nombre: 'Pepe', correo: 'pepe@pepe.com' })
-}) */
-app.listen(3000, () => { console.log('Servidor levantado puerto 3000') }) // puerto, función callback
+})
+
+app.listen(3000, () => {
+  console.log('Servidor levantado puerto 3000')
+}) // puerto, función callback
