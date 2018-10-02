@@ -4,7 +4,8 @@
   "description": "webserver",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "hbs": "^4.0.1"
   },
   "devDependencies": {
     "eslint": "^5.6.1",
@@ -16,7 +17,7 @@
     "nodemon": "^1.18.4"
   },
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js -e js,hbs"
   },
   "repository": {
     "type": "git",
