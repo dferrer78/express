@@ -8,6 +8,11 @@ const hbs = require('hbs')
 hbs.registerPartials(path.join(__dirname, 'views', 'partials'))
 app.set('view engine', 'hbs') // clave valor
 
+// helpers
+hbs.registerHelper('getCurrentYear', () => new Date().getFullYear())
+// con paso de parámetro:
+hbs.registerHelper('toUpperCase', text => text.toUpperCase())
+
 app.use(consoleLogMiddleware)
 
 app.use(fileLogMiddleware)
@@ -23,15 +28,22 @@ app.use(express.static(staticRoute))
 
 app.get('/contactar', (req, res) => {
   res.render('contactar.hbs', {
-    pageTitle: 'Contactar',
-    currentYear: new Date().getFullYear()
+    pageTitle: 'Contactar'/* ,
+    currentYear: new Date().getFullYear() */
   })
 })
 
 app.get('/inicial', (req, res) => {
   res.render('inicial.hbs', {
-    pageTitle: 'Inicial',
-    currentYear: new Date().getFullYear()
+    pageTitle: 'Inicial'/* ,
+    currentYear: new Date().getFullYear() */
+  })
+})
+
+app.get('/noticias', (req, res) => {
+  res.render('noticias', {
+    pageTitle: 'Noticias'/* ,
+    currentYear: new Date().getFullYear() */
   })
 })
 
